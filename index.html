@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <h1 class="mb-4">Product Dashboard</h1>
+        
+        <!-- Search and Controls Section -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row g-3 align-items-end">
+                    <!-- Search Input -->
+                    <div class="col-md-4">
+                        <label for="searchInput" class="form-label">Tìm kiếm theo tên:</label>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Nhập tên sản phẩm...">
+                    </div>
+                    
+                    <!-- Items Per Page -->
+                    <div class="col-md-3">
+                        <label for="itemsPerPage" class="form-label">Số lượng mỗi trang:</label>
+                        <select class="form-select" id="itemsPerPage">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Sort Buttons -->
+                    <div class="col-md-5">
+                        <label class="form-label">Sắp xếp:</label>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-primary" id="sortPriceAsc">
+                                Giá ↑
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" id="sortPriceDesc">
+                                Giá ↓
+                            </button>
+                            <button type="button" class="btn btn-outline-success" id="sortNameAsc">
+                                Tên ↑
+                            </button>
+                            <button type="button" class="btn btn-outline-success" id="sortNameDesc">
+                                Tên ↓
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="text-center d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsGrid" class="products-grid">
+            <!-- Products will be inserted here -->
+        </div>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center" id="pagination">
+                <!-- Pagination will be generated here -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
